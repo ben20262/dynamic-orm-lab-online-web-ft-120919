@@ -57,6 +57,7 @@ class InteractiveRecord
     sql = "SELECT * FROM #{self.table_name} WHERE ? = ?"
     key = hash.keys.first.to_s
     value = hash.values.first
+    p key
     this = DB[:conn].execute(sql, key, value)
     this
   end
